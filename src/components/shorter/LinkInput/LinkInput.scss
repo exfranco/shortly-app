@@ -1,0 +1,23 @@
+@import '../../styles/variables'; 
+
+.link-input {
+    display: flex;
+    gap: 1rem;
+    .input {
+      flex-grow: 1;
+      padding: 0.8rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .btn-shorten {
+      background-color: #2acfcf;
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover {
+        background-color: #9be3e2;
+      }
+    }
+  }
+  

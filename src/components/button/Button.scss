@@ -1,0 +1,29 @@
+@import '../../styles/variables'; 
+
+.btn_emerald{
+  background-color: $color-esmeralda;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //min-width: 177px;
+  margin: 0 auto;
+  text-align: center;
+
+  &:hover{
+      background-color: $color-esmeraldaHover;
+      color: #ffffff;
+  }
+
+  &.w-full {
+    width: 100%;
+  }
+
+  &.w-177 {
+    width: 177px;
+  }
+
+  &.w-149 {
+    width: 149px;
+  }
+}
