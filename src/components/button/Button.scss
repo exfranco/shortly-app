@@ -1,18 +1,27 @@
 @import '../../styles/variables'; 
 
-.btn_emerald{
+.btn_emerald {
   background-color: $color-esmeralda;
   height: 62px;
   display: flex;
   align-items: center;
   justify-content: center;
-  //min-width: 177px;
   margin: 0 auto;
   text-align: center;
 
-  &:hover{
-      background-color: $color-esmeraldaHover;
-      color: #ffffff;
+  &:hover {
+    background-color: $color-esmeraldaHover;
+    color: #ffffff;
+  }
+
+  &:active {
+    background-color: $color-esmeraldaClicked;
+    color: #ffffff;
+  }
+
+  &.copied {
+    background-color: $color-esmeraldaClicked; // Cambia el color a verde o el estilo que prefieras
+    color: white;
   }
 
   &.w-full {

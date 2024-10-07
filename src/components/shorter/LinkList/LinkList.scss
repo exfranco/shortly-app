@@ -23,7 +23,16 @@
         border-radius: 5px;
         cursor: pointer;
         &:hover {
-          background-color: #9be3e2;
+          background-color: $color-esmeraldaHover;
+        }
+
+        &:active {
+          background-color: $color-esmeraldaClicked;
+          color: #ffffff;
+        }
+        &.copied {
+          background-color: $color-esmeraldaClicked;
+          color: white;
         }
       }
     }

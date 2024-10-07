@@ -11,24 +11,43 @@ type Link = {
 };
 
 const Shorter: React.FC = () => {
-  
-  const [links, setLinks] = useState<Link[]>([
-    { original: 'https://example.com', shortened: 'https://short.ly/abc' },
-    { original: 'https://anotherlink.com', shortened: 'https://short.ly/xyz' }
-  ]);
+  const [links, setLinks] = useState<Link[]>([]);
 
-  
+
   const handleCopy = (shortLink: string) => {
     navigator.clipboard.writeText(shortLink);
     alert(`Copied: ${shortLink}`);
   };
 
+
+  const handleShorten = async (url: string) => {
+    try {
+      const response = await fetch('/api/shorten-link', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ url })
+      });
   
-  const handleShorten = (url: string) => {
-    // Simular acortamiento de enlace (en un caso real, se llamaría a una API aquí)
-    const shortenedLink = `https://short.ly/${Math.random().toString(36).substring(2, 8)}`;
-    setLinks([...links, { original: url, shortened: shortenedLink }]);
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error('Error details:', errorData);
+        throw new Error('Failed to shorten the link');
+      }
+  
+      const data = await response.json();
+      console.log('Data:', data);
+  
+      const shortenedLink = data.alias;
+      setLinks([...links, { original: url, shortened: shortenedLink }]);
+    } catch (error) {
+      console.error('Error shortening link:', error);
+      alert('There was an error shortening the link. Please try again.');
+    }
   };
+  
+  
 
   return (
     <section className="seccion_shorter">
