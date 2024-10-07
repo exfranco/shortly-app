@@ -1,9 +1,121 @@
 @import '../../styles/variables'; 
 
-.advanced-statistics {
-    padding: 2rem;
-    background-color: #f9fafb;    
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;  
+.seccion_advanced{
+    padding: 4.375rem 0;
+
+    h3{
+        color: #1F2937;
+        font-size: 2.2rem;
+        line-height: 2.5rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        margin-bottom: 15px;
+        text-align: center;
+
+    }
+
+    .subtitle{
+        color: $color-texto;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    ul.list_statistics{
+        padding-top: 70px;
+        position: relative;
+
+        &:before{
+            content: '';
+            width: calc(100% - 30px);
+            height: 8px;
+            background-color: $color-esmeralda;
+            position: absolute;
+            left: 50%;
+            top: 240px;
+            transform: translateX(-50%);
+        }
+
+        li{
+            width: calc(33% - 18px);
+            height: 240px;
+            background-color: #ffffff;
+            margin-bottom: 20px;
+            z-index: 10;
+            box-shadow: 0px 4px 6px -1px #0000001A;
+
+            .ico{
+                width: 80px;
+                margin-top: -56px;
+                margin-bottom: 20px;
+            }
+            .title{
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            p{
+                font-size: 14px;
+                line-height: 21px;
+                color: $color-texto;
+            }
+        }
+
+        li:nth-child(2){
+            margin-top: 36px;
+        }
+        li:nth-child(3){
+            margin-top: 72px;
+        }
+    }
+}
+
+@media (max-width:768px){
+    .seccion_advanced {
+        h3{
+            font-size: 30px;
+            line-height: 45px;
+        }
+
+        .subtitle{
+            font-size: 18px;
+            line-height: 27px;
+
+            br{
+                display: none;
+            }
+        }
+
+        ul.list_statistics {
+            &:before{
+                width: 8px;
+                height: 60%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+            li{
+                width: 100%;
+                margin-bottom:84px;
+                height: auto;
+                padding-left: 40px;
+                padding-right: 40px;
+                padding-bottom: 40px; 
+
+                .ico{
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                .title{
+                    text-align: center;
+                    margin-bottom: 15px;
+                }
+
+                p{
+                    text-align: center;
+                }
+            }
+        }
+    }
 }
