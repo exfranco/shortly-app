@@ -13,13 +13,13 @@ type Link = {
 const Shorter: React.FC = () => {
   const [links, setLinks] = useState<Link[]>([]);
 
-  // Cargar los enlaces desde localStorage cuando el componente se monta
+  
   useEffect(() => {
     const storedLinks = localStorage.getItem('shortenedLinks');
     if (storedLinks) {
       try {
         const parsedLinks = JSON.parse(storedLinks);
-        // Asegurarse de que es un array antes de establecer el estado
+        
         if (Array.isArray(parsedLinks)) {
           setLinks(parsedLinks);
         }
@@ -29,9 +29,9 @@ const Shorter: React.FC = () => {
     }
   }, []);
 
-  // Guardar los enlaces en localStorage cada vez que se actualizan
+  
   useEffect(() => {
-    // Guardar solo si hay enlaces para evitar guardar un array vacío constantemente
+    
     if (links.length > 0) {
       localStorage.setItem('shortenedLinks', JSON.stringify(links));
     }

@@ -2,12 +2,11 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   try {
-    // Log para verificar si el cuerpo de la solicitud se está recibiendo correctamente
+    
     console.log('Receiving request...');
     const { url } = await request.json();
     console.log('URL received:', url);
-
-    // Verifica que la API key esté presente
+    
     const apiKey = process.env.NEXT_PUBLIC_URLDAY_API_KEY;
     if (!apiKey) {
       console.error('API Key is missing');
@@ -23,14 +22,14 @@ export async function POST(request: Request) {
         'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        url: url  // Aquí colocas la URL que quieres acortar
+        url: url 
       })
     });
     console.log('API Response:', apiResponse);
     console.log('API Response status:', apiResponse.status);
 
     if (apiResponse.status != 200) {
-      //const errorData = await apiResponse.json();
+     
       console.error('API Error:', apiResponse.statusText);
       return NextResponse.json({ error: apiResponse.statusText }, { status: apiResponse.status });
     }

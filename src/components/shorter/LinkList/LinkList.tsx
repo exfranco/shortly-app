@@ -19,7 +19,7 @@ const LinkList: React.FC<LinkListProps> = ({ links = [], onCopy }) => {
   const handleCopy = (link: string, index: number) => {
     onCopy(link);
     setCopiedIndex(index);
-    setTimeout(() => setCopiedIndex(null), 3000); // Resetea el índice después de 3 segundos
+    setTimeout(() => setCopiedIndex(null), 3000);
   };
 
   return (

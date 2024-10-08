@@ -12,7 +12,7 @@ const LinkInput: React.FC<LinkInputProps> = ({ onShorten }) => {
   const [isError, setIsError] = useState(false);
   const [isValid, setIsValid] = useState(false);
 
-  // Función para validar la URL
+
   const validateUrl = (value: string) => {
     const urlPattern = new RegExp(
       /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)([\/\w-]*)*\/?$/
@@ -37,7 +37,7 @@ const LinkInput: React.FC<LinkInputProps> = ({ onShorten }) => {
     const value = e.target.value;
     setUrl(value);
 
-    // Validar URL al escribir
+
     if (validateUrl(value)) {
       setIsError(false);
       setIsValid(true);
