@@ -5,7 +5,7 @@ export async function POST(request: Request) {
     
     const { url } = await request.json();    
     
-    const apiKey = process.env.NEXT_PUBLIC_URLDAY_API_KEY;
+    const apiKey = process.env.URLDAY_API_KEY;
     if (!apiKey) {      
       return NextResponse.json({ error: 'API Key is missing' }, { status: 500 });
     }    
