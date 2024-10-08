@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# URL Shortening App
+
+This is a URL shortening application built with React, Next.js, and TypeScript. It integrates with an external API to shorten URLs and stores them persistently in `localStorage` to keep the links available even after the browser is refreshed.
+
+## Features
+- Shorten URLs using an external API.
+- Persist shortened links using `localStorage`.
+- Copy shortened URLs to the clipboard with a single click.
+- Responsive and user-friendly interface.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js (version 14 or higher)
+- npm or yarn
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Installation
+1. Clone the repository:  
+    git clone [repository-url]
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Navigate to the project directory:
+    cd url-shortening-app
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Install dependencies:
+    npm install
+    # or
+    yarn install
 
-## Learn More
+4. Environment Setup
+    Create a .env.local file in the root directory with the following content:
+    URLDAY_API_KEY=your-api-key-here
 
-To learn more about Next.js, take a look at the following resources:
+    Replace your-api-key-here with the actual API key provided.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Running the Project
+    To start the development server, run:
+    npm run dev
+    # or
+    yarn dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    The application will be accessible at http://localhost:3000.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Additional Notes and Improvements
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Persistent Links: The application uses localStorage to keep the shortened URLs available even when the page is refreshed. This provides a seamless user experience.
+
+2. Error Handling: API errors are managed gracefully with error messages displayed when the shortening process fails.
+
+3. UI Enhancements: The application features a responsive design with dynamic states (e.g., showing "Copied" when a link is copied) for better interactivity.
+
+4. Future Improvements: Adding user authentication to save links for different users, allowing customization of the shortened URLs, and adding analytics to track clicks on shortened links.
+
+
+## Technologies Used
+
+- Frontend: React, Next.js, TypeScript, Tailwind CSS
+- API Integration: Fetch API
+- Storage: Local Storage for persisting links
+
+
+## Contact
+
+For any questions or feedback, please contact Franco Saavedra at francosaavedra@hotmail.com
+
+
+
