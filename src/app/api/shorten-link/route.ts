@@ -29,7 +29,7 @@ export async function POST(request: Request) {
 
     if (apiResponse.status !== 200) {
       const errorText = await apiResponse.text();
-      
+      console.error('Error from URL shortening API:', apiResponse.status, errorText);
       return NextResponse.json({ error: apiResponse.statusText }, { status: apiResponse.status });
     }
 
