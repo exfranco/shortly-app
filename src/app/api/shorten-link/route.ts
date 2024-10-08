@@ -16,16 +16,15 @@ export async function POST(request: Request) {
 
     console.log('Using API Key:', apiKey);
 
-    const apiResponse = await fetch(`https://www.urlday.com/api/v1/links?search=${url}`, {
-      method: 'GET',
+    const apiResponse = await fetch(`https://urlbae.com/api/url/add`, {
+      method: 'POST',
       headers: {
-        //'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': `Bearer ${apiKey}`,
-        'Accept': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
       },
-      /*body: new URLSearchParams({
-        url: url
-      }),*/
+      body: JSON.stringify({
+        url: url  // Aquí colocas la URL que quieres acortar
+      })
     });
     console.log('API Response:', apiResponse);
     console.log('API Response status:', apiResponse.status);

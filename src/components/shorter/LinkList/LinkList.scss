@@ -1,45 +1,6 @@
 @import '../../../styles/variables'; 
 
-.link-list {
-    margin-top: 2rem;
-    .link-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      background-color: #f4f4f4;
-      border-radius: 5px;
-      margin-bottom: 1rem;
-  
-      .original-link, .shortened-link {
-        flex-grow: 1;
-        margin-right: 1rem;
-      }
-  
-      .btn-copy {
-        background-color: #2acfcf;
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        cursor: pointer;
-        &:hover {
-          background-color: $color-esmeraldaHover;
-        }
-
-        &:active {
-          background-color: $color-esmeraldaClicked;
-          color: #ffffff;
-        }
-        &.copied {
-          background-color: $color-esmeraldaClicked;
-          color: white;
-        }
-      }
-    }
-  }
-
-
-  
+ 
 
 .results{
 
@@ -48,48 +9,57 @@
     font-size: 18px;
   }
 
-    .short_link_bar{
-        padding: 15px 38px;
-        background-color: #fff;
-        margin-bottom:16px;            
-        box-shadow: 0px 4px 6px -1px #0000001A;
-        align-items: center;
+  .short_link_bar{
+      padding: 15px 38px;
+      background-color: #fff;
+      margin-bottom:16px;            
+      box-shadow: 0px 4px 6px -1px #0000001A;
+      align-items: center;
 
-        .original_link{
-            color: #000000;
-            overflow: hidden;
-            font-weight: 500;  
-            width: 52%;    
-            white-space: nowrap;  
-            font-size: 20px;        
-        }
-        
-        .shortened_link{
-            color: $color-esmeralda;
-            overflow: hidden;
-            padding-left: 20px;
-            font-weight: 500;
-            width: calc(50% - 197px);
-            white-space: nowrap;
-            font-size: 20px;
-        }
-                  
+      .original_link{
+          color: #000000;
+          overflow: hidden;
+          font-weight: 500;  
+          width: 52%;    
+          white-space: nowrap;  
+          font-size: 20px;        
+      }
+      
+      .shortened_link{
+          color: $color-esmeralda;
+          overflow: hidden;
+          padding-left: 20px;
+          font-weight: 500;
+          width: calc(50% - 197px);
+          white-space: nowrap;
+          font-size: 20px;
+      }
+                
 
-        .btn_copy{
-            background-color: $color-esmeralda;
-            width: 177px;
-            height: 62px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 177px;
+      .btn_copy{
+          background-color: $color-esmeralda;
+          width: 177px;
+          height: 62px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 177px;
 
-            &:hover{
-                background-color: $color-esmeraldaHover;
-                color: #ffffff;
-            }
-        }            
-    }            
+          &:hover{
+              background-color: $color-esmeraldaHover;
+              color: #ffffff;
+          }
+          &:active {
+            background-color: $color-esmeraldaClicked;
+            color: #ffffff;
+          }
+
+          &.copied {
+            background-color: $color-esmeraldaClicked;
+            color: white;
+          }
+      }            
+  }            
 }
 
 @media (max-width:768px){

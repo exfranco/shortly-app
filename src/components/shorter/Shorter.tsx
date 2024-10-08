@@ -16,7 +16,7 @@ const Shorter: React.FC = () => {
 
   const handleCopy = (shortLink: string) => {
     navigator.clipboard.writeText(shortLink);
-    alert(`Copied: ${shortLink}`);
+    
   };
 
 
@@ -37,15 +37,26 @@ const Shorter: React.FC = () => {
       }
   
       const data = await response.json();
-      console.log('Data:', data);
+      console.log('Data from API:', JSON.stringify(data, null, 2)); // Verificar la estructura de los datos
   
-      const shortenedLink = data.alias;
+      // Extraer el enlace acortado directamente del campo "shorturl"
+      const shortenedLink = data.shorturl;
+  
+      if (!shortenedLink) {
+        console.error('No shortened link found in response. Check the response structure.');
+        alert('The API did not return a shortened link. Please check the console for details.');
+        return;
+      }
+  
       setLinks([...links, { original: url, shortened: shortenedLink }]);
     } catch (error) {
       console.error('Error shortening link:', error);
       alert('There was an error shortening the link. Please try again.');
     }
   };
+  
+  
+  
   
   
 
