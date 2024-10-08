@@ -1,20 +1,27 @@
 import React from 'react';
+import Image from 'next/image';
 import './AdvancedStatistics.scss';
 
 const AdvancedStatistics: React.FC = () => {
   return (
     <section className="seccion_advanced">
-    <h3>
+      <h3>
         Advanced Statistics
-    </h3>
-    <div className="subtitle">
+      </h3>
+      <div className="subtitle">
         Track how your links are performing across the web with our <br/> advanced statistics dashboard.
-    </div>
+      </div>
 
-    <ul className="list_statistics md:flex justify-between">
+      <ul className="list_statistics md:flex justify-between">
         <li className="bg-white p-5 rounded-lg">
           <div className="ico">
-            <img src="/images/icons/ico-brand.svg" alt="Brand Icon"/>
+            <Image 
+              src="/images/icons/ico-brand.svg" 
+              alt="Brand Recognition" 
+              width={80} 
+              height={80} 
+              style={{ width: '100%', height: 'auto' }}
+            />
           </div>
           <div className="title font-bold">
             Brand Recognition
@@ -26,7 +33,13 @@ const AdvancedStatistics: React.FC = () => {
         
         <li className="bg-white p-5 rounded-lg mt-[23px]">
           <div className="ico">
-            <img src="/images/icons/ico-detailed.svg" alt="Detailed Icon"/>
+            <Image 
+              src="/images/icons/ico-detailed.svg" 
+              alt="Detailed Records" 
+              width={80} 
+              height={80} 
+              style={{ width: '100%', height: 'auto' }}
+            />
           </div>
           <div className="title font-bold">
             Detailed Records
@@ -38,7 +51,13 @@ const AdvancedStatistics: React.FC = () => {
         
         <li className="bg-white p-5 rounded-lg mt-[46px]">
           <div className="ico">
-            <img src="/images/icons/ico-fully.svg" alt="Fully Customizable Icon"/>
+            <Image 
+              src="/images/icons/ico-fully.svg" 
+              alt="Fully Customizable" 
+              width={80} 
+              height={80} 
+              style={{ width: '100%', height: 'auto' }}
+            />
           </div>
           <div className="title font-bold">
             Fully Customizable
@@ -48,8 +67,7 @@ const AdvancedStatistics: React.FC = () => {
           </p>
         </li>
       </ul>
-    
-</section>
+    </section>
   );
 };
 

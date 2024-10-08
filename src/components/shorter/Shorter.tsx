@@ -51,19 +51,16 @@ const Shorter: React.FC = () => {
         body: JSON.stringify({ url })
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error('Error details:', errorData);
+      if (!response.ok) {       
         throw new Error('Failed to shorten the link');
       }
 
-      const data = await response.json();
-      console.log('Data from API:', JSON.stringify(data, null, 2));
+      const data = await response.json();      
 
       const shortenedLink = data.shorturl;
 
       if (!shortenedLink) {
-        console.error('No shortened link found in response. Check the response structure.');
+        
         alert('The API did not return a shortened link. Please check the console for details.');
         return;
       }
